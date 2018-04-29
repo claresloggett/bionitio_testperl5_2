@@ -1,0 +1,11 @@
+sudo: true
+dist: trusty
+
+language: perl
+
+install:
+  - ./.travis/install-dependencies.sh
+
+script:
+  - ./functional_tests/bionitio_testperl5_2-test.sh -p $TRAVIS_BUILD_DIR/bionitio_testperl5_2.pl -d functional_tests/test_data
+  - ./.travis/unit-test.sh
